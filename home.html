@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barid Bank Mobile - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', 'Roboto', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .service-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .service-card:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar (Header) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex items-center justify-between px-4 py-3">
+            <!-- Left: Menu & Settings -->
+            <div class="flex items-center gap-3">
+                <button class="p-2">
+                    <i class="fas fa-bars text-black text-xl"></i>
+                </button>
+                <button class="p-2">
+                    <i class="fas fa-cog text-black text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Center: Logo -->
+            <div class="flex-1 flex justify-center">
+                <img src="logo2.png" alt="Barid Bank Mobile Logo" class="h-16 w-auto">
+            </div>
+
+            <!-- Right: Notifications & Power -->
+            <div class="flex items-center gap-3">
+                <button class="p-2">
+                    <i class="fas fa-bell text-black text-xl"></i>
+                </button>
+                <button class="p-2" onclick="window.location.href='index.html'">
+                    <i class="fas fa-power-off text-black text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Account Card (Carousel) -->
+    <div class="px-4 mt-4 mb-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <!-- Account Title -->
+            <div class="mb-5">
+                <h2 class="text-base font-bold text-black mb-1">Compte chèque</h2>
+                <p class="text-sm text-black">10811922</p>
+            </div>
+
+            <!-- Balance Section -->
+            <div class="rounded-lg p-4 mb-5" style="background-color: #fbe7b5;">
+                <div class="flex items-start gap-3">
+                    <button class="text-black pt-1">
+                        <i class="fas fa-eye text-lg"></i>
+                    </button>
+                    <div class="flex-1">
+                        <p class="text-2xl font-bold text-black mb-1 text-left">622.356.00 DH</p>
+                        <p class="text-xs text-gray-600 text-left">Solde du 26/11/2025 à 15:17</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latest Operations Button -->
+            <button class="w-full bg-gray-100 rounded-lg py-3 px-4 flex items-center justify-between">
+                <span class="text-sm font-bold text-black">Dernières opérations</span>
+                <i class="fas fa-chevron-down text-gray-600 text-xs"></i>
+            </button>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="flex justify-center gap-2 mt-3">
+            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="px-4 pb-8">
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Mes comptes -->
+            <div class="service-card bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                <div class="mb-3">
+                    <img src="icons/1.png" alt="Mes comptes" class="w-20 h-20 object-contain">
+                </div>
+                <p class="text-sm font-medium text-black text-center">Mes comptes</p>
+            </div>
+
+            <!-- Paiements -->
+            <div class="service-card bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                <div class="mb-3">
+                    <img src="icons/2.png" alt="Paiements" class="w-20 h-20 object-contain">
+                </div>
+                <p class="text-sm font-medium text-black text-center">Paiements</p>
+            </div>
+
+            <!-- Virements -->
+            <div class="service-card bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                <div class="mb-3">
+                    <img src="icons/3.png" alt="Virements" class="w-20 h-20 object-contain">
+                </div>
+                <p class="text-sm font-medium text-black text-center">Virements</p>
+            </div>
+
+            <!-- Transferts -->
+            <div class="service-card bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                <div class="mb-3">
+                    <img src="icons/4.png" alt="Transferts" class="w-20 h-20 object-contain">
+                </div>
+                <p class="text-sm font-medium text-black text-center">Transferts</p>
+            </div>
+
+            <!-- Moyens de paiement -->
+            <div class="service-card bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                <div class="mb-3">
+                    <img src="icons/5.png" alt="Moyens de paiement" class="w-20 h-20 object-contain">
+                </div>
+                <p class="text-sm font-medium text-black text-center">Moyens de paiement</p>
+            </div>
+
+            <!-- Achat de recharges -->
+            <div class="service-card bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                <div class="mb-3">
+                    <img src="icons/6.png" alt="Achat de recharges" class="w-20 h-20 object-contain">
+                </div>
+                <p class="text-sm font-medium text-black text-center">Achat de recharges</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar Placeholder -->
+    <div class="h-1 bg-black w-24 mx-auto rounded-full mb-2"></div>
+</body>
+</html>
+

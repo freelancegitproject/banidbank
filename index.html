@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barid Bank Mobile - Connexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .header-image {
+            background-image: url('hero_pic.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .logo-overlay {
+            position: relative;
+            z-index: 10;
+        }
+        .logo-text {
+            position: relative;
+            display: inline-block;
+        }
+        .logo-icon {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: #FFC107;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+        .logo-icon i {
+            font-size: 9px;
+        }
+        .logo-d-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .password-toggle {
+            cursor: pointer;
+            color: #666;
+        }
+        .btn-action {
+            transition: all 0.3s ease;
+        }
+        .btn-action:active {
+            transform: scale(0.98);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header Section (40-45% height) -->
+    <div class="header-image h-[40vh] min-h-[280px] relative rounded-b-[30px] overflow-hidden">
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="px-6 py-8 bg-white">
+        <!-- Welcome Message -->
+        <div class="text-center mb-8">
+            <h2 class="text-base text-black mb-3">Bienvenue</h2>
+            <h1 class="text-xl font-bold text-black uppercase tracking-wide">KENZA BERGHANE</h1>
+        </div>
+
+        <!-- Password Input Field -->
+        <div class="mb-6">
+            <div class="relative">
+                <input 
+                    type="password" 
+                    id="password"
+                    placeholder="Mot de passe" 
+                    class="w-full px-4 py-4 border border-gray-300 rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-gray-400 pr-12"
+                >
+                <button 
+                    type="button" 
+                    id="togglePassword"
+                    class="password-toggle absolute right-4 top-1/2 transform -translate-y-1/2"
+                >
+                    <i class="fas fa-eye-slash text-gray-500"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Login Button -->
+        <button id="loginBtn" class="w-full bg-gray-200 text-black font-medium py-4 rounded-lg mb-4 btn-action">
+            Se connecter
+        </button>
+
+        <!-- Forgot Password Link -->
+        <div class="text-center mb-8">
+            <a href="#" class="text-black text-sm underline">Mot de passe oublié</a>
+        </div>
+
+        <!-- Action Buttons Row -->
+        <div class="flex gap-3 mb-8">
+            <!-- Call Button -->
+            <button class="flex-1 bg-gray-200 text-black py-2 rounded-lg btn-action flex items-center justify-center">
+                <i class="fas fa-phone text-lg"></i>
+            </button>
+            
+            <!-- Demonstration Button -->
+            <button class="flex-1 bg-gray-200 text-black font-medium py-2 rounded-lg btn-action">
+                Démonstration
+            </button>
+            
+            <!-- Language Button -->
+            <button class="flex-1 bg-gray-200 text-black font-medium py-2 rounded-lg btn-action">
+                العربية
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="px-6 pb-8 bg-white text-center">
+        <!-- Bank Logo -->
+        <div class="mb-4 flex items-center justify-center">
+            <img src="Al_Barik_Bank_logo.png" alt="Al Barid Bank Logo" class="h-12 w-auto">
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-xs text-gray-600 mb-1">© 2025 Al Barid Bank - Tous les droits réservés</p>
+        <p class="text-xs text-gray-600">7.0.31</p>
+
+        <!-- Navigation Bar Placeholder -->
+        <div class="mt-8 h-0.5 bg-black w-24 mx-auto rounded-full"></div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const loginBtn = document.getElementById('loginBtn');
+        
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            const icon = togglePassword.querySelector('i');
+            if (type === 'password') {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Login validation
+        loginBtn.addEventListener('click', function() {
+            const password = passwordInput.value;
+            if (password === '01993') {
+                window.location.href = 'home.html';
+            } else {
+                alert('Mot de passe incorrect');
+                passwordInput.value = '';
+            }
+        });
+
+        // Allow Enter key to submit
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                loginBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
+
